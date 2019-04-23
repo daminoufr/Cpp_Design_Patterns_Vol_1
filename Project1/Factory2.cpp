@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include <memory>
+#include <map>
+#include <functional>
+
+namespace F2
+{
+
+// Register product creation methods
+
+class Product;
+class Factory {
+public:
+  // the map will allow to connect a string name to the function method
+  std::map<std::string, std::function<std::shared_ptr<Product>()>> m_map_create;
+  // the create product function
+  std::shared_ptr<Product> create(const std::string& name) const {
+    auto fc = m_map_create.find(name);
+    if (fc == m_map_create.end())
+      throw std::exception("Can't find product name");
+    return fc->second();
+  };
+  // simple singleton
+  static std::shared_ptr<Factory> instance() {
+    static std::shared_ptr<Factory> instance = std::make_shared<Factory>();
+    return instance;
+  }
+};
+
+class Product {
+protected:
+  // register product function creation to the factory
+  template <typename T>
+  static int register_fc_creation(const std::string& name) {
+    // use a lambda to create the product
+    Factory::instance()->m_map_create[name] 
+      = ([]() { return std::make_shared<T>(); });
+    return Factory::instance()->m_map_create.size();
+  }
+public:
+  virtual std::string name() const = 0;
+};
+
+class Product1 : public Product {
+  // need a static member variable to register automatically 
+  // create product function
+  static int m_register_fc_creation;
+public:
+  virtual std::string name() const { return "Product1"; };
+};
+// register fc creation
+int Product1::m_register_fc_creation 
+  = Product::register_fc_creation<Product1>("Product1");
+
+class Product2 : public Product {
+  static int m_register_fc_creation;
+public:
+  virtual std::string name() const { return "Product2"; };
+};
+int Product2::m_register_fc_creation 
+  = Product::register_fc_creation<Product2>("Product2");
+
+int main()
+{
+  std::shared_ptr<Product>  product 
+    = Factory::instance()->create("Product2");
+  std::cout << "Product: " << product->name() << std::endl;  
+  return 0;
+}
+}
+
+//int main()
+//{
+//  return F2::main();
+//}
+
