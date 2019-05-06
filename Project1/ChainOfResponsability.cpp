@@ -1,7 +1,4 @@
 #include <iostream>
-#include <list>
-#include <memory>
-#include <string>
 
 namespace Chain
 {
@@ -13,14 +10,19 @@ namespace Chain
     Client(int number) : m_number(number) {}
 };
 
-class Handler {
+class Handler { public:
+  virtual void add(Handler* handler) = 0;
+  virtual Client& apply(Client& client) const = 0;
+};
+
+class Handler_Imp : public Handler {
   // chain of responsability: if we can't update 
   // the result in this handler, pass to the next Handler
   Handler* m_handler = 0;
   // used for the handling condition
   int m_numero;
  public:
-  Handler(int numero): m_numero(numero) {}
+  Handler_Imp(int numero): m_numero(numero) {}
   // adding chain of handler
   void add(Handler* handler) {
     if (m_handler)
@@ -29,7 +31,7 @@ class Handler {
     else
       m_handler = handler;
   }
-  Client apply(Client& client) const
+  Client& apply(Client& client) const
   {
     if (client.m_number%m_numero == 0)
     {
@@ -46,9 +48,9 @@ class Handler {
 
 int main() {
   // create handlers
-  Handler handler2(2);
-  Handler handler3(3);
-  Handler handler5(5);
+  Handler_Imp handler2(2);
+  Handler_Imp handler3(3);
+  Handler_Imp handler5(5);
 
   // create the chain of responsability
   handler2.add(&handler3);
@@ -72,6 +74,7 @@ int main() {
 }
 
 int main_chain()
+//int main()
 {
   return Chain::main();
 }

@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <memory>
 #include <string>
-#include <iostream>
 
 namespace Memento2
 {
@@ -97,8 +95,6 @@ public:
   }
 };
 
-
-
 int main() {
   
   Object object; // {0}
@@ -139,6 +135,7 @@ int main() {
 }
 
 int main_Memento2()
+//int main()
 {
   return Memento2::main();
 }

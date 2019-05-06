@@ -32,7 +32,7 @@ class Product {
 protected:
   // register product function creation to the factory
   template <typename T>
-  static int register_fc_creation(const std::string& name) {
+  static size_t register_fc_creation(const std::string& name) {
     // use a lambda to create the product
     Factory::instance()->m_map_create[name] 
       = ([]() { return std::make_shared<T>(); });
@@ -45,20 +45,23 @@ public:
 class Product1 : public Product {
   // need a static member variable to register automatically 
   // create product function
-  static int m_register_fc_creation;
+  static size_t m_register_fc_creation;
 public:
   virtual std::string name() const { return "Product1"; };
 };
 // register fc creation
-int Product1::m_register_fc_creation 
+size_t Product1::m_register_fc_creation
   = Product::register_fc_creation<Product1>("Product1");
 
 class Product2 : public Product {
-  static int m_register_fc_creation;
+  // need a static member variable to register automatically 
+  // create product function
+  static size_t m_register_fc_creation;
 public:
   virtual std::string name() const { return "Product2"; };
 };
-int Product2::m_register_fc_creation 
+// register fc creation
+size_t Product2::m_register_fc_creation
   = Product::register_fc_creation<Product2>("Product2");
 
 int main()
@@ -68,10 +71,12 @@ int main()
   std::cout << "Product: " << product->name() << std::endl;  
   return 0;
 }
+
 }
 
+int main_Fact()
 //int main()
-//{
-//  return F2::main();
-//}
+{
+  return F2::main();
+}
 

@@ -41,6 +41,7 @@ int main() {
 }
 
 int main_Facade1()
+//int main()
 {
   return Facade1::main();
 }

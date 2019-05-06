@@ -1,8 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <memory>
-#include <string>
-#include <iostream>
 
 namespace Visitor
 {
@@ -69,6 +65,7 @@ int main() {
 }
 
 int main_Visitor()
+//int main()
 {
   return Visitor::main();
 }

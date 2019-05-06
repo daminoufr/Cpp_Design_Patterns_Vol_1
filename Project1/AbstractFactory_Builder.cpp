@@ -99,7 +99,8 @@ int main() {
 
 }
 
+int main_AFB()
 //int main()
-//{
-//  return AFB::main();
-//}
+{
+  return AFB::main();
+}

@@ -30,6 +30,7 @@ int main() {
 }
 
 int main_A1()
+//int main()
 {
   return A1::main();
 }

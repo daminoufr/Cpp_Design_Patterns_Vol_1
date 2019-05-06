@@ -5,9 +5,11 @@
 
 namespace F1
 {
+// define interface
 class Product { public:
   virtual std::string name() const = 0;
 };
+// implementations
 class Product1 : public Product { public:
   std::string name() const { return "Product1"; }
 };
@@ -18,6 +20,7 @@ class Product2 : public Product { public:
 class Factory { 
   Factory() {}
 public:
+  // return a product depending of the input
   static std::shared_ptr<Product> 
     create(const std::string& name) {
     if (name == "Product1")
@@ -40,3 +43,8 @@ int main()
 
 }
 
+//int main()
+int main_Fact1()
+{
+  return F1::main();
+}

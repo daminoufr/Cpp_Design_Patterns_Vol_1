@@ -97,7 +97,8 @@ int main() {
 
 }
 
+int main_Bridge()
 //int main()
-//{
-//  return B1::main();
-//}
+{
+  return B1::main();
+}

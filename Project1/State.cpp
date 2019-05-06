@@ -52,8 +52,8 @@ int main() {
 
 }
 
-//int main_State()
-int main()
+int main_State()
+//int main()
 {
   return State::main();
 }

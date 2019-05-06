@@ -17,6 +17,7 @@ public:
 };
 
 class Factory {
+  Factory() {}
 public:
   static std::shared_ptr<Product> create(const BuilDetails& builDetails) {
     // create the product from the build details
@@ -29,6 +30,7 @@ public:
 int main() {
   // create the build details
   BuilDetails builDetails(2, 3);
+  // create the product
   std::shared_ptr<Product> product = Factory::create(builDetails);
   std::cout << product->m_a << std::endl;  // 5
   return 0;
@@ -36,7 +38,8 @@ int main() {
 
 }
 
+int main_Builder1()
 //int main()
-//{
-//  return Builder1::main();
-//}
+{
+  return Builder1::main();
+}

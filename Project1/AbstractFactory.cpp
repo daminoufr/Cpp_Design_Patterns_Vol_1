@@ -57,7 +57,7 @@ int main() {
 }
 
 
-//int main()
-//{
-//  return AF::main();
-//}
+int main_AF1()
+{
+  return AF::main();
+}

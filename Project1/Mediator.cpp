@@ -1,6 +1,5 @@
 #include <iostream>
 #include <list>
-#include <memory>
 #include <string>
 
 namespace Mediator
@@ -11,6 +10,7 @@ namespace Mediator
 // used to communicate between Clients and the Mediator
 class Interface {
 public:
+  // Using string, but can be anything
   virtual void message_receive(const std::string& message) = 0;
   virtual void message_send(const std::string& message) = 0;
 };
@@ -84,6 +84,7 @@ int main() {
 }
 
 int main_Mediator()
+//int main()
 {
   return Mediator::main();
 }

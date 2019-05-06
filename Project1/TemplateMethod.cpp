@@ -1,8 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <memory>
-#include <string>
-#include <iostream>
 
 namespace TemplateMethod
 {
@@ -47,6 +43,7 @@ int main() {
 }
 
 int main_TemplateMethod()
+//int main()
 {
   return TemplateMethod::main();
 }
