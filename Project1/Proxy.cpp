@@ -63,7 +63,7 @@ int main() {
 
 }
 
-int main()
+int main_Proxy()
 {
   return Proxy::main();
 }
