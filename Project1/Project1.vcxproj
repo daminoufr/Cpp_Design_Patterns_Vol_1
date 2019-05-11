@@ -114,12 +114,12 @@
     <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="AbstractFactory_Builder.cpp" />
     <ClCompile Include="Bridge.cpp" />
-    <ClCompile Include="Builder1.cpp" />
-    <ClCompile Include="Builder2.cpp" />
+    <ClCompile Include="Factory_Builder1.cpp" />
+    <ClCompile Include="Factory_Builder2.cpp" />
     <ClCompile Include="ChainOfResponsability.cpp" />
     <ClCompile Include="Clone1.cpp" />
-    <ClCompile Include="Clone2.cpp" />
-    <ClCompile Include="Clone3.cpp" />
+    <ClCompile Include="Clone_withInheritance.cpp" />
+    <ClCompile Include="Clone_withCloneDetails.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="Decorator.cpp" />
@@ -130,6 +130,7 @@
     <ClCompile Include="Mediator.cpp" />
     <ClCompile Include="Memento.cpp" />
     <ClCompile Include="Memento2.cpp" />
+    <ClCompile Include="MVC.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Pimpl.cpp" />
     <ClCompile Include="Proxy.cpp" />
@@ -138,6 +139,9 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="TemplateMethod.cpp" />
     <ClCompile Include="Visitor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Print.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

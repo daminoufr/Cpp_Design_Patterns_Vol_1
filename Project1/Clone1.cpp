@@ -19,13 +19,9 @@ class Product { public:
 };
 
 // print functions helper to have cleaner programs
-template <typename T> void print(const T& t) {
-  std::cout << t << std::endl;
-}
-template <typename T, typename... Args> 
-void print(const T& t, Args... args) {
-  std::cout << t ;
-  print(args...);
+template <typename T1, typename T2>
+void print(const T1& t1, const T2& t2) {
+  std::cout << t1 << t2 << std::endl;
 }
 
 int main() {
@@ -43,7 +39,9 @@ int main() {
 
 }
 
+
+int main_Clone1()
 //int main()
-//{
-//  return Clone1::main();
-//}
+{
+  return Clone1::main();
+}

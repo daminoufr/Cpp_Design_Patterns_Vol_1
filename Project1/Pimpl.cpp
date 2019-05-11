@@ -3,16 +3,6 @@
 
 namespace P1
 {
-// print functions helper to have cleaner programs
-template <typename T> void print(const T& t) {
-  std::cout << t << std::endl;
-}
-template <typename T, typename... Args>
-void print(const T& t, Args... args) {
-  std::cout << t;
-  print(args...);
-}
-
 // -------- Interface.h --------------
 // interface.h you give to your clients 
 class Interface { 
@@ -54,13 +44,14 @@ int Interface::value() const {
 
 int main() {
   Interface interface;
-  print(interface.value()); // 10
+  std::cout << interface.value() << std::endl; // 10
   return 0;
 }
 
 }
 
+int main_Pimpl()
 //int main()
-//{
-//  return P1::main();
-//}
+{
+  return P1::main();
+}

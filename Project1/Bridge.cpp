@@ -3,16 +3,6 @@
 
 namespace B1
 {
-// print functions helper to have cleaner programs
-template <typename T> void print(const T& t) {
-  std::cout << t << std::endl;
-}
-template <typename T, typename... Args>
-void print(const T& t, Args... args) {
-  std::cout << t;
-  print(args...);
-}
-
 // -------- Interface.h --------------
 // interface.h you give to your clients 
 
@@ -62,7 +52,7 @@ class Implementation_derived_2 : public Implementation
 public:
   Implementation_derived_2(double d1, double d2)
     : m_d1(d1), m_d2(d2) { }
-  int value() const { return m_d1+m_d2; }
+  int value() const { return (int)(m_d1+m_d2); }
 };
 
 
@@ -85,6 +75,13 @@ int Interface_derived_2::value() const {
 }
 
 // -------- main.cpp ----------------
+
+// print functions helper to have cleaner programs
+template <typename T1>
+void print(const T1& t1) {
+  std::cout << t1 << std::endl;
+}
+
 
 int main() {
   Interface_derived_1 interface_1;

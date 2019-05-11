@@ -18,6 +18,7 @@ class Product2 : public Product { public:
 };
 
 class Factory { 
+  // private
   Factory() {}
 public:
   // return a product depending of the input

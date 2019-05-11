@@ -18,14 +18,16 @@ public:
 };
 
 int main() {
-  std::shared_ptr<Factory> factory = Factory::instance();
+  std::shared_ptr<Factory> factory1 = Factory::instance();
+  std::shared_ptr<Factory> factory2 = Factory::instance();
+  std::shared_ptr<Factory> factory3 = Factory::instance();
   return 0;
 }
 
 }
 
 //int main()
-int main_Sing()
+int main_Singleton()
 {
   return S1::main();
 }
