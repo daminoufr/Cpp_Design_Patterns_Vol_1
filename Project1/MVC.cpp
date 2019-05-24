@@ -103,8 +103,8 @@ int main()
 
 }
 
-int main()
-//int main_MVC()
+//int main()
+int main_MVC()
 {
   return MVC::main();
 }

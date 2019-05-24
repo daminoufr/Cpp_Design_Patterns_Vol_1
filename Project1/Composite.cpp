@@ -22,14 +22,14 @@ public:
 
 class Collection : public Interface {
   // the collection is composed of multiple Single
-  std::vector<Single> m_vec;
+  std::vector<Interface*> m_vec;
 public:
   void add(const int& a) {
-    m_vec.emplace_back(a);
+    m_vec.emplace_back(new Single(a));
   }
   void show(const std::string& endl="\n") const override {
-    for(const Single& single: m_vec)
-      single.show(",");
+    for(const Interface* single: m_vec)
+      single->show(",");
     std::cout << std::endl;
   }
 };
@@ -51,7 +51,8 @@ int main() {
 
 }
 
-int main_compo()
+//int main_compo()
+int main()
 {
   return Composite1::main();
 }
