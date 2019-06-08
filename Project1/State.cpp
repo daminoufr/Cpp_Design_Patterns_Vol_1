@@ -2,7 +2,7 @@
 
 namespace State
 {
-// points of convergences with 'Chain of responsability' 
+// points of convergences with 'Chain of responsibility' 
 // Same as strategy
 
 // Class Handler: we derive two type of handler  

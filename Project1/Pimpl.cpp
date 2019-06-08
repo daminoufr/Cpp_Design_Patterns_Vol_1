@@ -28,7 +28,7 @@ public:
   int value() const { return m_a; }
 };
 
-// Inteface implementation --
+// Interface implementation --
 Interface::Interface() : m_pimpl(
   std::make_unique<Interface::Implementation>()) 
 {
@@ -36,7 +36,7 @@ Interface::Interface() : m_pimpl(
 }
 int Interface::value() const {
   // here you use the pointer implementation
-  // this is hiden from your clients
+  // this is hidden from your clients
   return m_pimpl->value();
 }
 

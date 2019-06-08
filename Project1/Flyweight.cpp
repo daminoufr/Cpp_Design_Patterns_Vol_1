@@ -16,7 +16,7 @@ class Character {
     = std::vector<bool>(10000);
 public:
   Character(const char& char_) : m_char(char_) {
-    // TODO: initalize the array for the char
+    // TODO: initialize the array for the char
   }
   void display(const unsigned short& color) const {
     // should display the pixels (m_pixels) 
@@ -46,7 +46,7 @@ public:
   static std::shared_ptr<Character> getLetter(char char_) {
     return instance()->get(char_);
   }
-  // get Character, lazzy way
+  // get Character, lazy way
   std::shared_ptr<Character> get(char char_) {
     // have we stored the Character?
     auto iter = m_character.find(char_);
@@ -61,7 +61,7 @@ public:
   }
 };
 
-// Class Letter wich include the color (extrinsic)
+// Class Letter which include the color (extrinsic)
 class Letter {
   unsigned short m_color; // extrinsic
   std::shared_ptr<Character> m_chararcter; // intrinsic

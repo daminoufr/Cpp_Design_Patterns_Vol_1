@@ -16,7 +16,7 @@ class Handler { public:
 };
 
 class Handler_Imp : public Handler {
-  // chain of responsability: if we can't update 
+  // chain of responsibility: if we can't update 
   // the result in this handler, pass to the next Handler
   Handler* m_handler = 0;
   // used for the handling condition
@@ -52,7 +52,7 @@ int main() {
   Handler_Imp handler3(3);
   Handler_Imp handler5(5);
 
-  // create the chain of responsability
+  // create the chain of responsibility
   handler2.add(&handler3);
   handler2.add(&handler5);
 

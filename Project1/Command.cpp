@@ -32,7 +32,7 @@ public:
   void execute() {
     while (!m_commands.empty())
     {
-      // Exceucute command First in - First out
+      // Execucute command First in - First out
       m_commands.front()->execute();
       // remove command when done
       m_commands.pop_front();
@@ -42,7 +42,7 @@ public:
 
 
 int main() {
-  // Construct the coolection of commands
+  // Construct the collection of commands
   Script script;
   script.push_back(std::make_shared<Command1>());
   script.push_back(std::make_shared<Command2>());

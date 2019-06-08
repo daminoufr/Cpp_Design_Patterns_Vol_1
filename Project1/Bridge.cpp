@@ -56,13 +56,13 @@ public:
 };
 
 
-// Inteface implementation ---
+// Interface implementation ---
 Interface_derived_1::Interface_derived_1() {
   m_pimpl = std::make_unique<Implementation_derived_1>(3);
 }
 int Interface_derived_1::value() const {
   // here you use the pointer implementation
-  // this is hiden from your clients
+  // this is hidden from your clients
   return m_pimpl->value();
 }
 Interface_derived_2::Interface_derived_2() {
@@ -70,7 +70,7 @@ Interface_derived_2::Interface_derived_2() {
 }
 int Interface_derived_2::value() const {
   // here you use the pointer implementation
-  // this is hiden from your clients
+  // this is hidden from your clients
   return m_pimpl->value();
 }
 

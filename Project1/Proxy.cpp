@@ -25,7 +25,7 @@ class Letter {
   char m_char;
   std::shared_ptr<Character> m_chararcter; 
 public:
-  // Lazy: Character is not initalized
+  // Lazy: Character is not initialized
   Letter(char char_) : m_char(char_) {}
   // we need the Character pixels to display it
   const std::vector<bool>& get() {

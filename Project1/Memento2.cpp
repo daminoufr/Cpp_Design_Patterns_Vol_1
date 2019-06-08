@@ -26,7 +26,7 @@ struct Records {
     }
     else
     {
-      // adding in the midle, after some undo
+      // adding in the middle, after some undo
       m_mementos[++m_pos] = memento;
       m_mementos.resize(m_pos + 1);
     }

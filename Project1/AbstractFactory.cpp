@@ -39,7 +39,7 @@ public:
 
 int main() {
 
-  // simple: create manualy the Factory1 and Factory2
+  // simple: create manually the Factory1 and Factory2
   std::shared_ptr<AbstractFactory> factory1 
     = std::make_shared<Factory1>();
   std::shared_ptr<AbstractFactory> factory2 

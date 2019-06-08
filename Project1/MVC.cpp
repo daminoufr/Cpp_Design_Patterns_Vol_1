@@ -23,7 +23,7 @@ public:
   }
 };
 
-// Controler: intermediate between the View and the Model
+// Controller: intermediate between the View and the Model
 class Controller {
   Model* m_model = 0;
   // We want to show only [start, start+size[
@@ -57,7 +57,7 @@ class View {
   Controller* m_controller =0;
 public:
   View(Model* model) : m_controller(new Controller(model)) { }
-  // show : get data from Controler and print
+  // show : get data from Controller and print
   void show() const {
     std::vector<int> vec_show = m_controller->get();
     for (size_t i = 0; i < vec_show.size(); ++i)
