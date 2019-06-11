@@ -10,7 +10,8 @@ class Product { public:
   std::shared_ptr<int> m_p = std::make_shared<int>(3);
   // clone product
   Product* clone() const {
-    // use the default copy constructor to copy all member variables
+    // use the default copy constructor to copy 
+    // all member variables
     Product* product = new Product(*this);
     // update the member variable you choose
     product->m_p = std::make_shared<int>(*m_p);
