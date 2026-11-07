@@ -23,7 +23,8 @@ public:
   };
   // simple singleton
   static std::shared_ptr<Factory> instance() {
-    static std::shared_ptr<Factory> instance = std::make_shared<Factory>();
+    static std::shared_ptr<Factory> instance 
+      = std::make_shared<Factory>();
     return instance;
   }
 };
